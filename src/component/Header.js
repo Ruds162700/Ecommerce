@@ -9,12 +9,12 @@ import "./header.css";
 import { Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '@mui/material';
-import { decremetncount, incremetcount, cartval, clearcart,total } from '../Redux/Action';
+import { decremetncount, incremetcount, cartval, clearcart,total,countitem} from '../Redux/Action';
 
 export const Header = () => {
     const dispatch = useDispatch();
     const data = useSelector(state => state.Cart);
-    const count = useSelector(state => state.count); // Get the total count from 
+    const count = useSelector(state => state.citem); // Get the total count from 
     const billamount = useSelector(state => state.total); // Get the total count from state
    
       // const totalbill = () => {
@@ -28,7 +28,7 @@ export const Header = () => {
 
      
     useEffect(() => {
-        dispatch(cartval());
+        dispatch(countitem());
         dispatch(total());
     }, [data]);
 

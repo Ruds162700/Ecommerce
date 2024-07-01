@@ -1,9 +1,10 @@
     // reducer.js
 
-    import { ADDTOCART, REMOVEFROMCART, TOGGLEFAVOURITE, CLEARCART, INCREMETCOUNT, DECREMETNCOUNT, CARTVAL ,TOTAL,REMOVEFAV} from './Action';
+    import { ADDTOCART, REMOVEFROMCART, TOGGLEFAVOURITE,COUNTITEM, CLEARCART, INCREMETCOUNT, DECREMETNCOUNT, CARTVAL ,TOTAL,REMOVEFAV} from './Action';
     import { items } from '../component/DatasCard';
 
     const initialState = {
+        citem:0,
         count : 0,
         total : 0,
         Cart: [],
@@ -38,6 +39,13 @@
                     count += Number(element.count); 
                 });
                 return { ...state, count };
+            }
+            case COUNTITEM: {
+                let count = 0;
+                state.Cart.forEach(element => {
+                    count ++; 
+                });
+                return { ...state, citem:count };
             }
             case TOTAL: {
                 let total = 0;

@@ -7,10 +7,15 @@ export const DECREMETNCOUNT = "DECREMETNCOUNT";
 export const CARTVAL = "CARTVAL";
 export const TOTAL = "TOTAL";
 export const REMOVEFAV = "REMOVEFAV";
+export const COUNTITEM = "COUNTITEM";
 
 export const addtocart = (id) =>({
     type :ADDTOCART,
     payload : id,
+})
+export const countitem = (id) =>({
+    type :COUNTITEM,
+ 
 })
 export const removefav = () =>({
     type :REMOVEFAV,
