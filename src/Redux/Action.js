@@ -21,9 +21,7 @@ export const total = () =>({
 export const cartval = (id) =>({
     type :CARTVAL,
 })
-export const countcart = () =>({
-    type:COUNTCART,
-})
+
 export const removefromcart = (id) =>({
     type :ADDTOCART,
     payload : id,

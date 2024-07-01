@@ -13,18 +13,19 @@ const CartDetails = () => {
   const data = useSelector(state => state.Cart);
   const count = useSelector(state => state.count); // Get the total count from 
   const billamount = useSelector(state => state.total); // Get the total count from state
-
-
-  // Helper function to render star ratings
+  
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(cartval());
+    dispatch(total());
+  }, [data]);
+  // Helper function to render star ratings
+
   const renderStars = (rating) => {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 !== 0;
     const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-    useEffect(() => {
-      dispatch(cartval());
-      dispatch(total());
-    }, [data]);
+
 
     return (
       <>
