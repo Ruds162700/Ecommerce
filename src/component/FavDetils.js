@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as faSolidHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as faRegularHeart } from '@fortawesome/free-regular-svg-icons';
 import "./cards.css";
-import { ADDTOCART, TOGGLEFAVOURITE } from '../Redux/Action';
+import { ADDTOCART, TOGGLEFAVOURITE,VIEWDETAILS } from '../Redux/Action';
 import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
@@ -21,6 +21,9 @@ const FavDetils = () => {
     const [showAlert, setShowAlert] = useState(false);
     const [open, setOpen] = React.useState(false);
 
+    const handleViewDetails = (id) => {
+        dispatch({ type: VIEWDETAILS, payload: id });
+    };
 
     const handleAddToCart = (id) => {
         dispatch({ type: ADDTOCART, payload: id });
@@ -80,37 +83,50 @@ const FavDetils = () => {
 
                 <div className='container'>
                     {data.map(data => (
-                        <Card key={data.id}>
-                            <div className='image'>
-                                <Card.Img variant="top" src={data.image} />
-                            </div>
-                            <Card.Body>
-                                <div className='title'>
-                                    <Card.Title>{data.title}</Card.Title>
-                                </div>
-                                <Card.Text>
-                                    {data.description}
-                                </Card.Text>
-                                <div>
-                                    <Card.Text>₹{data.price}</Card.Text>
-                                    <Button
-                                        variant="primary"
-                                        onClick={() => handleAddToCart(data.id)}
-                                    >
-                                        Add To Cart
-                                    </Button>
-                                    <Button
-                                        variant="link"
-                                        onClick={() => dispatch({ type: TOGGLEFAVOURITE, payload: data.id })}
-                                    >
-                                        {data.isFav ?
-                                            <FontAwesomeIcon icon={faSolidHeart} /> :
-                                            <FontAwesomeIcon icon={faRegularHeart} />
-                                        }
-                                    </Button>
-                                </div>
-                            </Card.Body>
-                        </Card>
+                     <Card key={data.id}>
+                     <div className='alldata'>
+                         <div className='imgfix'>
+                             <div className='image'>
+                                 <Card.Img variant="top" className='actimage' src={data.image} />
+                             </div>
+                         </div>
+                         <Card.Body>
+                             <div className='txtnddetails'>
+                                 <div className='title'>
+                                     <Card.Title>{data.title}</Card.Title>
+                                 </div>
+                                 {!data.isDetails ? (
+                                     <div className='showbtn'>
+                                         <button className='sbtn' onClick={() => handleViewDetails(data.id)}>View Details</button>
+                                     </div>
+                                 ) : (
+                                     <div>
+                                         <Card.Text>{data.description}</Card.Text>
+                                         <button className='sbtn' onClick={() => handleViewDetails(data.id)}>Show Less</button>
+                                     </div>
+                                 )}
+                             </div>
+                             <div className='botm'>
+                                 <Card.Text>₹{data.price}</Card.Text>
+                                 <Button
+                                     variant="primary"
+                                     onClick={() => handleAddToCart(data.id)}
+                                 >
+                                     Add To Cart
+                                 </Button>
+                                 <Button
+                                     variant="link"
+                                     onClick={() => handleToggleFavourite(data.id)}
+                                 >
+                                     {data.isFav ?
+                                         <FontAwesomeIcon icon={faSolidHeart} /> :
+                                         <FontAwesomeIcon icon={faRegularHeart} />
+                                     }
+                                 </Button>
+                             </div>
+                         </Card.Body>
+                     </div>
+                 </Card>
                     ))}
                 </div>
             </>)}

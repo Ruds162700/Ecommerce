@@ -69,10 +69,10 @@ export const Header = () => {
     return (
         <Navbar expand="lg" id='cont' style={{ backgroundColor: 'orange' }}>
             <Container>
-                <NavLink to="/" className='title'><h2>morniino</h2></NavLink>
+                <NavLink to="/" className="name"><h2>morniino</h2></NavLink>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll" className="navbar-collapse">
-                    {!isViewCartOrCheckout && (
+                    {!isViewCartOrCheckout ? (
                         <Form className="d-flex me-auto">
                             <div className='search-container'>
                                 <input
@@ -105,7 +105,7 @@ export const Header = () => {
                                 )}
                             </div>
                         </Form>
-                    )}
+                    ):null}
                     <div className="nav-icons">
                         <NavLink to="/favourites">
                             <i className="fa-regular fa-heart icon" id="fav"></i>

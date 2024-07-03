@@ -1,4 +1,4 @@
-import { ADDTOCART, REMOVEFROMCART, TOGGLEFAVOURITE, COUNTITEM, SEARCH, CLEARCART, INCREMETCOUNT, DECREMETNCOUNT, CARTVAL, TOTAL, REMOVEFAV } from './Action';
+import { ADDTOCART, REMOVEFROMCART, TOGGLEFAVOURITE, COUNTITEM, VIEWDETAILS,SEARCH, CLEARCART, INCREMETCOUNT, DECREMETNCOUNT, CARTVAL, TOTAL, REMOVEFAV } from './Action';
 import { items } from '../component/DatasCard'; // Ensure this import is correct for your project
 
 const initialState = {
@@ -7,7 +7,7 @@ const initialState = {
     count: 0,
     total: 0,
     Cart: [],
-    data: items.map(item => ({ ...item, isFav: false })),
+    data: items.map(item => ({ ...item, isFav: false,isDetails:false })),
 };
 
 const reducer = (state = initialState, action) => {
@@ -91,7 +91,11 @@ const reducer = (state = initialState, action) => {
 
             return { ...state, data: updatedData, searched: updatedSearched };
         }
-
+        case VIEWDETAILS:{
+           const id = action.payload;
+           const updatedData = state.data.map(item => item.id === id ? {...item,isDetails:!item.isDetails} : item);
+           return { ...state, data: updatedData, searched: updatedData};
+      }
 
 
         case INCREMETCOUNT: {

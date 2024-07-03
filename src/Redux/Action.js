@@ -9,11 +9,15 @@ export const TOTAL = "TOTAL";
 export const REMOVEFAV = "REMOVEFAV";
 export const COUNTITEM = "COUNTITEM";
 export const SEARCH = "SEARCH";
-
+export const VIEWDETAILS = "VIEWDETAILS";
 
 export const addtocart = (id) =>({
     type :ADDTOCART,
     payload : id,
+})
+export const viewdetails = (id) =>({
+    type :VIEWDETAILS,
+    payload:id,
 })
 export const countitem = (id) =>({
     type :COUNTITEM,

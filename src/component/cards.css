@@ -1,66 +1,119 @@
-.whole{
+.whole {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-    gap: 20px;
-  }
-  .success{
-   display: flex;
-   justify-content: center;
-   align-items: center; 
-   width: 100px;
-  }
- .image{
-    max-height:600px ;
- }  
- .title{
-    max-height: 80px;
- }
-  .card {
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-    margin: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  
-  .card-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .card-title {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .card-text {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .card-button {
-    margin-top: auto;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 20px;
+}
+
+.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+}
+
+.txtnddetails {
+  display: list-item;
+  list-style: none;
+}
+
+.sbtn {
+  text-decoration: none;
+  border: none;
+  background-color: white;
+  color: blue;
+}
+
+.showbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.imgfix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  height: 150px;
+}
+
+.alldata {
+  display: contents;
+  height: 600px;
+  padding: 10px;
+}
+
+.image {
+  height: 100px;
+  width: 100px;
+}
+
+.actimage {
+  object-fit: cover;
+}
+
+.title {
+  max-height: 80px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex-grow: 1; /* Ensure the card body fills the available space */
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  text-align: center;
+  margin: 10px;
+}
+
+.card-button {
+  margin-top: auto;
+}
+
+.botm {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center; /* Ensure items are centered vertically */
+  margin-top: auto; /* Push to the bottom */
+}
