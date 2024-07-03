@@ -1,6 +1,6 @@
 /* Existing CSS */
 .name {
- margin-right: 20px;
+  margin-right: 20px;
   text-decoration: none;
   color: black;
 }
@@ -202,4 +202,24 @@ input {
   font-size: 25px;
   cursor: pointer;
   margin: 0 15px;
+}
+
+.navbar-collapse .name {
+  flex-grow: 1;
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-collapse .name {
+    margin-bottom: 10px;
+  }
+
+  .nav-icons {
+    justify-content: center;
+    width: 100%;
+  }
 }
