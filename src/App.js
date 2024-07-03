@@ -7,8 +7,10 @@ import CartDetails from './component/CartDetails';
 import FavDetils from './component/FavDetils';
 import CheckOut from './component/CheckOut';
 import Error from './component/Error';
+import { useState } from 'react';
 
 function App() {
+  
   return (
     <div className="App">
       <Header/>

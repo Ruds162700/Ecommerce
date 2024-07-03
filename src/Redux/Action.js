@@ -8,6 +8,8 @@ export const CARTVAL = "CARTVAL";
 export const TOTAL = "TOTAL";
 export const REMOVEFAV = "REMOVEFAV";
 export const COUNTITEM = "COUNTITEM";
+export const SEARCH = "SEARCH";
+
 
 export const addtocart = (id) =>({
     type :ADDTOCART,
@@ -16,6 +18,10 @@ export const addtocart = (id) =>({
 export const countitem = (id) =>({
     type :COUNTITEM,
  
+})
+export const search = (name) =>({
+    type :SEARCH,
+    payload:name,
 })
 export const removefav = () =>({
     type :REMOVEFAV,

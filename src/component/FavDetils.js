@@ -15,7 +15,7 @@ import Snackbar from '@mui/material/Snackbar';
 import CloseIcon from '@mui/icons-material/Close';
 
 const FavDetils = () => {
-    const items = useSelector(state => state.data);
+    const items = useSelector(state => state.searched.length > 0 ? state.searched : state.data);
     const data = items.filter(elem => elem.isFav === true);
     const dispatch = useDispatch();
     const [showAlert, setShowAlert] = useState(false);

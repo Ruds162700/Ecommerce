@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -7,17 +7,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as faSolidHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as faRegularHeart } from '@fortawesome/free-regular-svg-icons';
 import "./cards.css";
-import { ADDTOCART, TOGGLEFAVOURITE } from '../Redux/Action';
+import { ADDTOCART, TOGGLEFAVOURITE, search } from '../Redux/Action';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
 
 const Cards = () => {
-    const items = useSelector(state => state.data);
+    const items = useSelector(state => state.searched.length > 0 ? state.searched : state.data);
     const dispatch = useDispatch();
     const [showAlert, setShowAlert] = useState(false);
     const [open, setOpen] = React.useState(false);
+     
+
 
 
     const handleAddToCart = (id) => {
