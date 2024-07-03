@@ -29,6 +29,10 @@ const FavDetils = () => {
         dispatch({ type: ADDTOCART, payload: id });
         setOpen(true);
     };
+     
+    const handleToggleFavourite = (id) =>{
+        dispatch({ type: TOGGLEFAVOURITE, payload: id });
+    }
 
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
