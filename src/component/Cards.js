@@ -64,6 +64,8 @@ const Cards = () => {
                                     <div className='title'>
                                         <Card.Title>{data.title}</Card.Title>
                                     </div>
+                                    <div className='datas'>
+
                                     {!data.isDetails ? (
                                         <div className='showbtn'>
                                             <button className='sbtn' onClick={() => handleViewDetails(data.id)}>View Details</button>
@@ -74,6 +76,7 @@ const Cards = () => {
                                             <button className='sbtn' onClick={() => handleViewDetails(data.id)}>Show Less</button>
                                         </div>
                                     )}
+                                    </div>
                                 </div>
                                 <div className='botm'>
                                     <Card.Text>₹{data.price}</Card.Text>

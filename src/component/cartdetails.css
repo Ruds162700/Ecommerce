@@ -1,63 +1,65 @@
 .cart-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-    margin-left: 60px;
-    width: 95%; /* Ensure the container takes up full width */
-  }
-  
-  .align-text-center {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .cart-item {
-    width: 100%;
-    max-width: 1000px; /* Increase the max-width for larger cards */
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .cart-card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .cart-img {
-    width: 200px; /* Increase the image width for better fit in larger cards */
-    height: auto;
-    margin-right: 20px;
-    border-radius: 10px;
-  }
-  
-  .cart-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .cart-price {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .cart-rating {
-    display: flex;
-    margin-top: 10px;
-  }
-  
-  .star {
-    color: #ff9800;
-    margin-right: 2px;
-  }
-  .quantity-btn{
-    color: #ddd;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  margin-left: 60px;
+  width: 95%;
+}
+
+.align-text-center {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cart-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+}
+
+.cart-img {
+  width: 200px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.cart-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-rating {
+  display: flex;
+  margin-top: 10px;
+}
+
+.star {
+  color: #ff9800;
+  margin-right: 2px;
+}
+
+.quantity-btn {
+  color: #ddd;
+}
+
 .totalbill {
   display: flex;
   justify-content: space-between;
@@ -66,4 +68,34 @@
   border: 1px solid;
   border-radius: 10px;
   border-top: 1px solid #ddd;
+}
+
+@media only screen and (max-width: 1328px) {
+  .cart-container {
+    width: 85%;
+    margin-left: 30px;
+    margin-right: 5px;
+    flex-direction: column;
+    align-items: center;
   }
+  
+  #photubox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+  }
+  
+  .photu {
+    
+    height: 200px;
+    width: 170px;
+  }
+  
+  .photu .cart-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

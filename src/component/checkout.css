@@ -68,4 +68,9 @@
     padding: 20px;
     background-color: #fff;
   }
+  @media (max-width:750px) {
+    .checkout{
+    display: block;
+    }
+  }
   

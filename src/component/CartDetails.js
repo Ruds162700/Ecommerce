@@ -49,10 +49,13 @@ const CartDetails = () => {
       <h1 className='align-text-center'></h1>
       {
         data.map((item, index) => (
-          <div className="card mb-3 cart-item" key={index}>
+          <div className="card mb-3 cart-item" id='cardbody' key={index}>
             <div className="row no-gutters cart-card">
-              <div className="col-md-4">
-                <img src={item.image} className="card-img cart-img" alt="..." />
+              <div className="col-md-4" id='photubox'>
+                <div className='photu'>
+
+                <img src={item.image} className="card-img cart-img" alt="..."  />
+                </div>
               </div>
               <div className="col-md-8">
                 <div className="card-body cart-body">
